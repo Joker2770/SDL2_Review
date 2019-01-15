@@ -1,7 +1,7 @@
 ﻿  Main.cpp
   正在生成代码
-  0 of 7 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  3 of 7 functions (42.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   SDL_Image_Hello.vcxproj -> E:\open_source\demo\SDL2_Review\Release\SDL_Image_Hello.exe
