@@ -128,8 +128,8 @@ int main(int argc, char *argv[])
 
 				//Apply the image stretched
 				SDL_Rect stretchRect;
-				stretchRect.x = 0;
-				stretchRect.y = 0;
+				stretchRect.x = SCREEN_WIDTH / 4;
+				stretchRect.y = SCREEN_HEIGHT / 4;
 				stretchRect.w = SCREEN_WIDTH/2;
 				stretchRect.h = SCREEN_HEIGHT/2;
 				SDL_BlitScaled(gCurrentSurface, NULL, gScreenSurface, &stretchRect);
