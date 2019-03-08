@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Optimized_Surface_And_S
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Loading_PNGs", "SDL_Loading_PNGs\SDL_Loading_PNGs.vcxproj", "{C12E517A-CD85-4760-A3C7-09EE3F24328B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Texture_Loading_and_Rendering", "SDL_Texture_Loading_and_Rendering\SDL_Texture_Loading_and_Rendering.vcxproj", "{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{C12E517A-CD85-4760-A3C7-09EE3F24328B}.Release|x64.Build.0 = Release|x64
 		{C12E517A-CD85-4760-A3C7-09EE3F24328B}.Release|x86.ActiveCfg = Release|Win32
 		{C12E517A-CD85-4760-A3C7-09EE3F24328B}.Release|x86.Build.0 = Release|Win32
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Debug|x64.ActiveCfg = Debug|x64
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Debug|x64.Build.0 = Debug|x64
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Debug|x86.Build.0 = Debug|Win32
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Release|x64.ActiveCfg = Release|x64
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Release|x64.Build.0 = Release|x64
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Release|x86.ActiveCfg = Release|Win32
+		{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
