@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Texture_Loading_and_Ren
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Geometry_Rendering", "SDL_Geometry_Rendering\SDL_Geometry_Rendering.vcxproj", "{31FEBC26-75D2-4CFC-9F64-90854DF2D654}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Viewport", "SDL_Viewport\SDL_Viewport.vcxproj", "{51C2B148-8743-4AFB-893A-4E3824CC52AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{31FEBC26-75D2-4CFC-9F64-90854DF2D654}.Release|x64.Build.0 = Release|x64
 		{31FEBC26-75D2-4CFC-9F64-90854DF2D654}.Release|x86.ActiveCfg = Release|Win32
 		{31FEBC26-75D2-4CFC-9F64-90854DF2D654}.Release|x86.Build.0 = Release|Win32
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Debug|x64.ActiveCfg = Debug|x64
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Debug|x64.Build.0 = Debug|x64
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Debug|x86.Build.0 = Debug|Win32
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Release|x64.ActiveCfg = Release|x64
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Release|x64.Build.0 = Release|x64
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Release|x86.ActiveCfg = Release|Win32
+		{51C2B148-8743-4AFB-893A-4E3824CC52AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

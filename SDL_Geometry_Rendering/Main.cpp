@@ -149,7 +149,8 @@ bool init()
 			{
 				//Initialize renderer color
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-			}
+			}
+
 		}
 	}
 
