@@ -23,7 +23,7 @@
     <ProjectGuid>{833fa33e-00b4-43f9-b5a7-e35bf79a0508}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SDL_Color_Keying</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -152,7 +152,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="LTexture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LTexture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
