@@ -93,6 +93,8 @@ void LTexture::render(int x, int y)
 {
 	//Set rendering space and render to screen
 	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+
+	//Render to screen
 	SDL_RenderCopy(gRenderer, mTexture, NULL, &renderQuad);
 }
 
