@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Clip_Rendering_and_Spri
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Color_Modulation", "SDL_Color_Modulation\SDL_Color_Modulation.vcxproj", "{92816890-0AC1-49F7-A5F5-683941B33D39}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Alpha_Blending", "SDL_Alpha_Blending\SDL_Alpha_Blending.vcxproj", "{828F542D-258D-4D30-8317-4CEE49551085}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{92816890-0AC1-49F7-A5F5-683941B33D39}.Release|x64.Build.0 = Release|x64
 		{92816890-0AC1-49F7-A5F5-683941B33D39}.Release|x86.ActiveCfg = Release|Win32
 		{92816890-0AC1-49F7-A5F5-683941B33D39}.Release|x86.Build.0 = Release|Win32
+		{828F542D-258D-4D30-8317-4CEE49551085}.Debug|x64.ActiveCfg = Debug|x64
+		{828F542D-258D-4D30-8317-4CEE49551085}.Debug|x64.Build.0 = Debug|x64
+		{828F542D-258D-4D30-8317-4CEE49551085}.Debug|x86.ActiveCfg = Debug|Win32
+		{828F542D-258D-4D30-8317-4CEE49551085}.Debug|x86.Build.0 = Debug|Win32
+		{828F542D-258D-4D30-8317-4CEE49551085}.Release|x64.ActiveCfg = Release|x64
+		{828F542D-258D-4D30-8317-4CEE49551085}.Release|x64.Build.0 = Release|x64
+		{828F542D-258D-4D30-8317-4CEE49551085}.Release|x86.ActiveCfg = Release|Win32
+		{828F542D-258D-4D30-8317-4CEE49551085}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
