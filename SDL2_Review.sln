@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Alpha_Blending", "SDL_A
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Animated_Sprites_and_VSync", "SDL_Animated_Sprites_and_VSync\SDL_Animated_Sprites_and_VSync.vcxproj", "{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Rotation_and_Flipping", "SDL_Rotation_and_Flipping\SDL_Rotation_and_Flipping.vcxproj", "{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}.Release|x64.Build.0 = Release|x64
 		{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}.Release|x86.ActiveCfg = Release|Win32
 		{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}.Release|x86.Build.0 = Release|Win32
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Debug|x64.ActiveCfg = Debug|x64
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Debug|x64.Build.0 = Debug|x64
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Debug|x86.ActiveCfg = Debug|Win32
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Debug|x86.Build.0 = Debug|Win32
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Release|x64.ActiveCfg = Release|x64
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Release|x64.Build.0 = Release|x64
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Release|x86.ActiveCfg = Release|Win32
+		{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
