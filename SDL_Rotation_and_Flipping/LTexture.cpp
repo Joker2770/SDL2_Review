@@ -239,11 +239,11 @@ int main(int argc, char *argv[])
 						switch (e.key.keysym.sym)
 						{
 						case SDLK_a:
-							degrees -= 60;
+							degrees -= 10;
 							break;
 
 						case SDLK_d:
-							degrees += 60;
+							degrees += 10;
 							break;
 
 						case SDLK_q:
