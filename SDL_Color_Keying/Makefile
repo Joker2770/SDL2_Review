@@ -12,7 +12,7 @@ COMPILER_FLAGS = -w
 LINKER_FLAGS = -lSDL2 -lSDL2_image
 
 #OBJ_NAME specifies the name of our exectuable
-OBJ_NAME = ../Release/SDL_Color_Keying
+OBJ_NAME = ../bin/SDL_Color_Keying
 
 #This is the target that compiles our executable
 all : $(OBJS)
