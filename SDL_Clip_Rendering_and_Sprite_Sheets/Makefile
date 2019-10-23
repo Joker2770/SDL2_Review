@@ -17,3 +17,6 @@ OBJ_NAME = ../bin/SDL_Clip_Rendering_and_Sprite_Sheets
 #This is the target that compiles our executable
 all : $(OBJS)
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
+
+clean:
+	rm -rf $(OBJ_NAME)
