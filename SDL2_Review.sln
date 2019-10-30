@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Rotation_and_Flipping",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_True_Type_Fonts", "SDL_True_Type_Fonts\SDL_True_Type_Fonts.vcxproj", "{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Mouse_Events", "SDL_Mouse_Events\SDL_Mouse_Events.vcxproj", "{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}.Release|x64.Build.0 = Release|x64
 		{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}.Release|x86.ActiveCfg = Release|Win32
 		{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}.Release|x86.Build.0 = Release|Win32
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Debug|x64.ActiveCfg = Debug|x64
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Debug|x64.Build.0 = Debug|x64
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Debug|x86.ActiveCfg = Debug|Win32
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Debug|x86.Build.0 = Debug|Win32
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Release|x64.ActiveCfg = Release|x64
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Release|x64.Build.0 = Release|x64
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Release|x86.ActiveCfg = Release|Win32
+		{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

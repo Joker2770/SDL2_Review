@@ -19,19 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LButton.h" />
     <ClInclude Include="LTexture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LButton.cpp" />
     <ClCompile Include="LTexture.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{e54de2b3-4ddf-4b35-bfb4-57835d80b888}</ProjectGuid>
+    <ProjectGuid>{dd8732cf-e68d-4270-a8e0-d92efa3fd58a}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SDL_True_Type_Fonts</RootNamespace>
+    <RootNamespace>SDL_Mouse_Events</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -89,9 +92,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IncludePath>E:\Linker\SDL2-2.0.8\include;E:\Linker\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Linker\SDL2-2.0.8\lib\x86;E:\Linker\SDL2_image-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -139,7 +141,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
