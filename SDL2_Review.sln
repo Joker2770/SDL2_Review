@@ -3,39 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Hello", "SDL_Hello\SDL_Hello.vcxproj", "{04601CB7-7544-4936-9594-444C0820A55A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_SDL_Hello", "01_SDL_Hello\01_SDL_Hello.vcxproj", "{04601CB7-7544-4936-9594-444C0820A55A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Image_Hello", "SDL_Image_Hello\SDL_Image_Hello.vcxproj", "{0F1861FC-F20D-410D-A3F8-41D4A17688DD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_SDL_Image_Hello", "02_SDL_Image_Hello\02_SDL_Image_Hello.vcxproj", "{0F1861FC-F20D-410D-A3F8-41D4A17688DD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Event", "SDL_Event\SDL_Event.vcxproj", "{99CC3BF8-7881-4069-BAB5-C8560AFE7DF6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_SDL_Event", "03_SDL_Event\03_SDL_Event.vcxproj", "{99CC3BF8-7881-4069-BAB5-C8560AFE7DF6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Key_Presses", "SDL_Key_Presses\SDL_Key_Presses.vcxproj", "{624434D5-F509-4E4B-A443-84C0C3EF1822}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04_SDL_Key_Presses", "04_SDL_Key_Presses\04_SDL_Key_Presses.vcxproj", "{624434D5-F509-4E4B-A443-84C0C3EF1822}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Optimized_Surface_And_Soft_Stretching", "SDL_Optimized_Surface_And_Soft_Stretching\SDL_Optimized_Surface_And_Soft_Stretching.vcxproj", "{D9B952F2-A7E6-4094-8C92-92EAE8449721}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_SDL_Optimized_Surface_And_Soft_Stretching", "05_SDL_Optimized_Surface_And_Soft_Stretching\05_SDL_Optimized_Surface_And_Soft_Stretching.vcxproj", "{D9B952F2-A7E6-4094-8C92-92EAE8449721}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Loading_PNGs", "SDL_Loading_PNGs\SDL_Loading_PNGs.vcxproj", "{C12E517A-CD85-4760-A3C7-09EE3F24328B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06_SDL_Loading_PNGs", "06_SDL_Loading_PNGs\06_SDL_Loading_PNGs.vcxproj", "{C12E517A-CD85-4760-A3C7-09EE3F24328B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Texture_Loading_and_Rendering", "SDL_Texture_Loading_and_Rendering\SDL_Texture_Loading_and_Rendering.vcxproj", "{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07_SDL_Texture_Loading_and_Rendering", "07_SDL_Texture_Loading_and_Rendering\07_SDL_Texture_Loading_and_Rendering.vcxproj", "{3614A3D9-359A-44F5-B9E7-1136CD9D32B6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Geometry_Rendering", "SDL_Geometry_Rendering\SDL_Geometry_Rendering.vcxproj", "{31FEBC26-75D2-4CFC-9F64-90854DF2D654}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08_SDL_Geometry_Rendering", "08_SDL_Geometry_Rendering\08_SDL_Geometry_Rendering.vcxproj", "{31FEBC26-75D2-4CFC-9F64-90854DF2D654}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Viewport", "SDL_Viewport\SDL_Viewport.vcxproj", "{51C2B148-8743-4AFB-893A-4E3824CC52AE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09_SDL_Viewport", "09_SDL_Viewport\09_SDL_Viewport.vcxproj", "{51C2B148-8743-4AFB-893A-4E3824CC52AE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Color_Keying", "SDL_Color_Keying\SDL_Color_Keying.vcxproj", "{833FA33E-00B4-43F9-B5A7-E35BF79A0508}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_SDL_Color_Keying", "10_SDL_Color_Keying\10_SDL_Color_Keying.vcxproj", "{833FA33E-00B4-43F9-B5A7-E35BF79A0508}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Clip_Rendering_and_Sprite_Sheets", "SDL_Clip_Rendering_and_Sprite_Sheets\SDL_Clip_Rendering_and_Sprite_Sheets.vcxproj", "{065FAB1A-4DBB-4D06-8613-94C574AD58E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_SDL_Clip_Rendering_and_Sprite_Sheets", "11_SDL_Clip_Rendering_and_Sprite_Sheets\11_SDL_Clip_Rendering_and_Sprite_Sheets.vcxproj", "{065FAB1A-4DBB-4D06-8613-94C574AD58E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Color_Modulation", "SDL_Color_Modulation\SDL_Color_Modulation.vcxproj", "{92816890-0AC1-49F7-A5F5-683941B33D39}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_SDL_Color_Modulation", "12_SDL_Color_Modulation\12_SDL_Color_Modulation.vcxproj", "{92816890-0AC1-49F7-A5F5-683941B33D39}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Alpha_Blending", "SDL_Alpha_Blending\SDL_Alpha_Blending.vcxproj", "{828F542D-258D-4D30-8317-4CEE49551085}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "13_SDL_Alpha_Blending", "13_SDL_Alpha_Blending\13_SDL_Alpha_Blending.vcxproj", "{828F542D-258D-4D30-8317-4CEE49551085}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Animated_Sprites_and_VSync", "SDL_Animated_Sprites_and_VSync\SDL_Animated_Sprites_and_VSync.vcxproj", "{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14_SDL_Animated_Sprites_and_VSync", "14_SDL_Animated_Sprites_and_VSync\14_SDL_Animated_Sprites_and_VSync.vcxproj", "{4B1AB379-6138-4DA8-90D6-C12C937D0DE0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Rotation_and_Flipping", "SDL_Rotation_and_Flipping\SDL_Rotation_and_Flipping.vcxproj", "{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15_SDL_Rotation_and_Flipping", "15_SDL_Rotation_and_Flipping\15_SDL_Rotation_and_Flipping.vcxproj", "{4BEF394B-0F34-4369-A0C1-9F9F360BD1F7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_True_Type_Fonts", "SDL_True_Type_Fonts\SDL_True_Type_Fonts.vcxproj", "{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "16_SDL_True_Type_Fonts", "16_SDL_True_Type_Fonts\16_SDL_True_Type_Fonts.vcxproj", "{E54DE2B3-4DDF-4B35-BFB4-57835D80B888}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Mouse_Events", "SDL_Mouse_Events\SDL_Mouse_Events.vcxproj", "{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "17_SDL_Mouse_Events", "17_SDL_Mouse_Events\17_SDL_Mouse_Events.vcxproj", "{DD8732CF-E68D-4270-A8E0-D92EFA3FD58A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
