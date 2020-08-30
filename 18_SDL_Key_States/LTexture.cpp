@@ -14,16 +14,20 @@ bool loadMedia();
 //Frees media and shuts down SDL
 void closeAll();
 
-//Scene textures
-LTexture gSpriteSheetTexture;
-
 //The window we'll be rendering to
 SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
 
-//Scene sprites
-SDL_Rect gSpriteClips[4];
+//Scene textures
+LTexture gPressTexture;
+LTexture gUpTexture;
+LTexture gDownTexture;
+LTexture gLeftTexture;
+LTexture gRightTexture;
+
+//Current rendered texture
+LTexture* currentTexture = NULL;
 
 LTexture::LTexture()
 {
@@ -91,7 +95,25 @@ void LTexture::free()
 	}
 }
 
-void LTexture::render(int x, int y, SDL_Rect* clip)
+void LTexture::setColor(Uint8 red, Uint8 green, Uint8 blue)
+{
+	//Modulate texture rgb
+	SDL_SetTextureColorMod(mTexture, red, green, blue);
+}
+
+void LTexture::setBlendMode(SDL_BlendMode blending)
+{
+	//Set blending function
+	SDL_SetTextureBlendMode(mTexture, blending);
+}
+
+void LTexture::setAlpha(Uint8 alpha)
+{
+	//Modulate texture alpha
+	SDL_SetTextureAlphaMod(mTexture, alpha);
+}
+
+void LTexture::render(int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
 	//Set rendering space and render to screen
 	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
@@ -104,7 +126,8 @@ void LTexture::render(int x, int y, SDL_Rect* clip)
 	}
 
 	//Render to screen
-	SDL_RenderCopy(gRenderer, mTexture, clip, &renderQuad);
+	//SDL_RenderCopy(gRenderer, mTexture, clip, &renderQuad);
+	SDL_RenderCopyEx(gRenderer, mTexture, clip, &renderQuad, angle, center, flip);
 }
 
 int LTexture::getWidth()
@@ -130,6 +153,11 @@ bool init()
 	}
 	else
 	{
+		//Set texture filtering to linear
+		if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"))
+		{
+			printf("Warning: Linear texture filtering not enabled!");
+		}
 
 		//Create window
 		gWindow = SDL_CreateWindow("Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
@@ -172,37 +200,39 @@ bool loadMedia()
 	//Loading success flag
 	bool success = true;
 
-	//Load sprite sheet texture
-	if (!gSpriteSheetTexture.loadFromFile("11_clip_rendering_and_sprite_sheets/sprites.png"))
+	//Load press texture
+	if (!gPressTexture.loadFromFile("04_KeyPresses/press.bmp"))
 	{
-		printf("Failed to load sprite sheet texture!\n");
+		printf("Failed to load press texture!\n");
 		success = false;
 	}
-	else
+
+	//Load up texture
+	if (!gUpTexture.loadFromFile("04_KeyPresses/up.bmp"))
 	{
-		//Set top left sprite
-		gSpriteClips[0].x = 0;
-		gSpriteClips[0].y = 0;
-		gSpriteClips[0].w = 100;
-		gSpriteClips[0].h = 100;
+		printf("Failed to load up texture!\n");
+		success = false;
+	}
 
-		//Set top right sprite
-		gSpriteClips[1].x = 100;
-		gSpriteClips[1].y = 0;
-		gSpriteClips[1].w = 100;
-		gSpriteClips[1].h = 100;
+	//Load down texture
+	if (!gDownTexture.loadFromFile("04_KeyPresses/down.bmp"))
+	{
+		printf("Failed to load down texture!\n");
+		success = false;
+	}
 
-		//Set bottom left sprite
-		gSpriteClips[2].x = 0;
-		gSpriteClips[2].y = 100;
-		gSpriteClips[2].w = 100;
-		gSpriteClips[2].h = 100;
+	//Load left texture
+	if (!gLeftTexture.loadFromFile("04_KeyPresses/left.bmp"))
+	{
+		printf("Failed to load left image!\n");
+		success = false;
+	}
 
-		//Set bottom right sprite
-		gSpriteClips[3].x = 100;
-		gSpriteClips[3].y = 100;
-		gSpriteClips[3].w = 100;
-		gSpriteClips[3].h = 100;
+	//Load right texture
+	if (!gRightTexture.loadFromFile("04_KeyPresses/right.bmp"))
+	{
+		printf("Failed to load right image!\n");
+		success = false;
 	}
 
 	return success;
@@ -211,7 +241,11 @@ bool loadMedia()
 void closeAll()
 {
 	//Free loaded images
-	gSpriteSheetTexture.free();
+	gPressTexture.free();
+	gUpTexture.free();
+	gDownTexture.free();
+	gLeftTexture.free();
+	gRightTexture.free();
 
 	//Destroy window    
 	SDL_DestroyRenderer(gRenderer);
@@ -258,27 +292,27 @@ int main(int argc, char *argv[])
 					}
 				}
 
+				const Uint8 * currentKeyStates = SDL_GetKeyboardState(NULL);
+				if (currentKeyStates[SDL_SCANCODE_UP]) currentTexture = &gUpTexture;
+				else if (currentKeyStates[SDL_SCANCODE_DOWN]) currentTexture = &gDownTexture;
+				else if (currentKeyStates[SDL_SCANCODE_LEFT]) currentTexture = &gLeftTexture;
+				else if (currentKeyStates[SDL_SCANCODE_RIGHT]) currentTexture = &gRightTexture;
+				else currentTexture = &gPressTexture;
+
 				//Clear screen
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 				SDL_RenderClear(gRenderer);
 
-				//Render top left sprite
-				gSpriteSheetTexture.render(0, 0, &gSpriteClips[0]);
-
-				//Render top right sprite
-				gSpriteSheetTexture.render(SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
-
-				//Render bottom left sprite
-				gSpriteSheetTexture.render(0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
-
-				//Render bottom right sprite
-				gSpriteSheetTexture.render(SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[3]);
+				//Render current texture
+				currentTexture->render(0, 0);
 
 				//Update screen
 				SDL_RenderPresent(gRenderer);
 			}
 		}
 	}
+
+	currentTexture->free();
 	closeAll();
 
 	return 0;

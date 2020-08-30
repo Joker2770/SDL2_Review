@@ -96,7 +96,7 @@ bool loadMedia()
 #if defined(_SDL_TTF_H) || defined(SDL_TTF_H) || defined(SDL_TTF_H_)
 	//Load sprites
 	SDL_Color m_color = { 0,0,0,0 };
-	if (!gButtonSpriteSheetTexture.loadFromRenderedText(gRenderer, "16_true_type_fonts/lazy.ttf", "hello1234564646ygyugygy", m_color))
+	if (!gButtonSpriteSheetTexture.loadFromRenderedText(gRenderer, "16_true_type_fonts/lazy.ttf", "hello1234564646", m_color))
 	{
 		printf("Failed to load button sprite texture!\n");
 		success = false;

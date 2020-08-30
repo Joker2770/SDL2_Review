@@ -12,7 +12,7 @@ COMPILER_FLAGS = -w
 LINKER_FLAGS = -lSDL2 -lSDL2_image -lSDL2_ttf
 
 #OBJ_NAME specifies the name of our exectuable
-OBJ_NAME = ../bin/SDL_Mouse_Events
+OBJ_NAME = ../bin/17_SDL_Mouse_Events_exe
 
 #This is the target that compiles our executable
 all : $(OBJS)
