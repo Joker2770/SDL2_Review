@@ -210,7 +210,7 @@ bool loadMedia()
 	bool success = true;
 
 	//Load PNG texture
-	gTexture = loadTexture("./viewport.png");
+	gTexture = loadTexture("09_Viewport/viewport.png");
 	if (gTexture == NULL)
 	{
 		printf("Failed to load texture image!\n");

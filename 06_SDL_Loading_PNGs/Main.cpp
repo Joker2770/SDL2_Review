@@ -177,7 +177,7 @@ bool loadMedia()
 	bool success = true;
 
 	//Load default surface
-	gCurrentSurface = loadSurface("./preview.png");
+	gCurrentSurface = loadSurface("06_Loading_PNGs/preview.png");
 	if (gCurrentSurface == NULL)
 	{
 		printf("Failed to load default image!\n");

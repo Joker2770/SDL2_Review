@@ -117,7 +117,7 @@ bool loadMedia()
 	bool success = true;
 
 	//Load splash image
-	gHelloWorld = SDL_LoadBMP("testprinter.bmp");
+	gHelloWorld = SDL_LoadBMP("02_Image_Hello/testprinter.bmp");
 	if (gHelloWorld == NULL)
 	{
 		printf("Unable to load image %s! SDL Error: %s\n", "preview2.jpg", SDL_GetError());
