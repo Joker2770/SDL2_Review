@@ -186,13 +186,13 @@ bool init()
 				//Initialize renderer color
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-				//Initialize PNG loading
-				int imgFlags = IMG_INIT_PNG;
-				if (!(IMG_Init(imgFlags) & imgFlags))
-				{
-					printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
-					success = false;
-				}
+// 				//Initialize PNG loading
+// 				int imgFlags = IMG_INIT_PNG;
+// 				if (!(IMG_Init(imgFlags) & imgFlags))
+// 				{
+// 					printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+// 					success = false;
+// 				}
 
 				//Initialize SDL_ttf
 				if (TTF_Init() == -1)
@@ -251,7 +251,7 @@ void closeAll()
 
 	//Quit SDL subsystems
 	TTF_Quit();
-	IMG_Quit();
+//	IMG_Quit();
 	SDL_Quit();
 }
 
