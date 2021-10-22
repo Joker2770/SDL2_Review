@@ -1,6 +1,7 @@
 #include "LTexture.h"
 #include <stdio.h>
 
+//���ڿ���
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 //Analog joystick dead zone
@@ -19,8 +20,9 @@ void closeAll();
 SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
-//Game Controller 1 handler
+//Game Controller 1 handler with force feedback
 SDL_Joystick* gGameController = NULL;
+SDL_Haptic* gControllerHaptic = NULL;
 
 //Scene textures
 LTexture gArrowTexture;
@@ -142,11 +144,11 @@ bool init()
 	bool success = true;
 
 	//Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0)
-	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-		success = false;
-	}
+    if( SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC ) < 0 )
+    {
+        printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
+        success = false;
+    }
 	else
 	{
 		//Set texture filtering to linear
@@ -156,19 +158,36 @@ bool init()
 		}
 
 		//Check for joysticks
-		if( SDL_NumJoysticks() < 1 )
-		{
-		    printf( "Warning: No joysticks connected!\n" );
-		}
-		else
-		{
-		    //Load joystick
-		    gGameController = SDL_JoystickOpen( 0 );
-		    if( gGameController == NULL )
-		    {
-		        printf( "Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError() );
-		    }
-		}
+        if( SDL_NumJoysticks() < 1 )
+        {
+            printf( "Warning: No joysticks connected!\n" );
+        }
+        else
+        {
+            //Load joystick
+            gGameController = SDL_JoystickOpen( 0 );
+            if( gGameController == NULL )
+            {
+                printf( "Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError() );
+            }
+            else
+            {
+                //Get controller haptic device
+                gControllerHaptic = SDL_HapticOpenFromJoystick( gGameController );
+                if( gControllerHaptic == NULL )
+                {
+                    printf( "Warning: Controller does not support haptics! SDL Error: %s\n", SDL_GetError() );
+                }
+                else
+                {
+                    //Get initialize rumble
+                    if( SDL_HapticRumbleInit( gControllerHaptic ) < 0 )
+                    {
+                        printf( "Warning: Unable to initialize rumble! SDL Error: %s\n", SDL_GetError() );
+                    }
+                }
+            }
+        }
 
 		//Create window
 		gWindow = SDL_CreateWindow("Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
@@ -212,7 +231,7 @@ bool loadMedia()
 	bool success = true;
 
 	//Load texture
-	if (!gArrowTexture.loadFromFile("19_Gamepads_and_Joysticks/preview.png"))
+	if (!gArrowTexture.loadFromFile("20_Force_Feedback/preview.png"))
 	{
 		printf("Failed to load press texture!\n");
 		success = false;
@@ -225,6 +244,10 @@ void closeAll()
 {
 	//Free loaded images
 	gArrowTexture.free();
+
+    //Close game controller with haptics
+    SDL_HapticClose( gControllerHaptic );
+    gControllerHaptic = NULL;
 
 	//Close game controller
 	SDL_JoystickClose( gGameController );
@@ -270,58 +293,23 @@ int main(int argc, char *argv[])
 			while (!quit)
 			{
 				//Handle events on queue
-				while (SDL_PollEvent(&e) != 0)
-				{
-					//User requests quit
-					if (e.type == SDL_QUIT)
-					{
-						quit = true;
-					}
-					else if( e.type == SDL_JOYAXISMOTION )
-					{
-						//Motion on controller 0
-						if( e.jaxis.which == 0 )
-						{                        
-						    //X axis motion
-						    if( e.jaxis.axis == 0 )
-						    {
-						        //Left of dead zone
-						        if( e.jaxis.value < -JOYSTICK_DEAD_ZONE )
-						        {
-						            xDir = -1;
-						        }
-						        //Right of dead zone
-						        else if( e.jaxis.value > JOYSTICK_DEAD_ZONE )
-						        {
-						            xDir =  1;
-						        }
-						        else
-						        {
-						            xDir = 0;
-						        }
-						    }                            
-						    //Y axis motion
-						    else if( e.jaxis.axis == 1 )
-						    {
-						        //Below of dead zone
-						        if( e.jaxis.value < -JOYSTICK_DEAD_ZONE )
-						        {
-						            yDir = -1;
-						        }
-						        //Above of dead zone
-						        else if( e.jaxis.value > JOYSTICK_DEAD_ZONE )
-						        {
-						            yDir =  1;
-						        }
-						        else
-						        {
-						            yDir = 0;
-						        }
-						    }
-						}
-					}
-                
-				}
+                while( SDL_PollEvent( &e ) != 0 )
+                {
+                    //User requests quit
+                    if( e.type == SDL_QUIT )
+                    {
+                        quit = true;
+                    }
+                    //Joystick button press
+                    else if( e.type == SDL_JOYBUTTONDOWN )
+                    {
+                        //Play rumble at 75% strenght for 500 milliseconds
+                        if( SDL_HapticRumblePlay( gControllerHaptic, 0.75, 500 ) != 0 )
+                        {
+                            printf( "Warning: Unable to play rumble! %s\n", SDL_GetError() );
+                        }
+                    }
+                }
 				
 				//Clear screen
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
