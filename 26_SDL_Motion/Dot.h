@@ -38,7 +38,5 @@ class Dot
 
         //The velocity of the dot
         int mVelX, mVelY;
-
-        LTexture gDotTexture;
 };
 
