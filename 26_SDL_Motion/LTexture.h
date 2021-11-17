@@ -1,7 +1,7 @@
 #ifndef __LTEXTURE_H__
 #define __LTEXTURE_H__
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 //Windows
 extern "C"
 {

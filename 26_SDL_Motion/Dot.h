@@ -5,9 +5,12 @@
     > Created Time: 2021年11月17日 星期三 10时54分17秒
  ************************************************************************/
 
+#ifndef __DOT_H__
+#define __DOT_H__
+
+#include "LTexture.h"
 #include<iostream>
 using namespace std;
-#include "LTexture.h"
 
 //The dot that will move around on the screen
 class Dot
@@ -18,7 +21,7 @@ class Dot
         static const int DOT_HEIGHT = 20;
 
         //Maximum axis velocity of the dot
-        static const int DOT_VEL = 10;
+        static const int DOT_VEL = 1;
 
         //Initializes the variables
         Dot();
@@ -39,4 +42,6 @@ class Dot
         //The velocity of the dot
         int mVelX, mVelY;
 };
+
+#endif
 
