@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = LTexture.cpp Dot.cpp
+OBJS = LTexture.cpp Dot.cpp main.cpp
 
 #CC specifies which compiler we're using
 CC = g++

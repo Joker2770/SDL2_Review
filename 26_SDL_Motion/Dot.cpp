@@ -73,9 +73,9 @@ void Dot::move()
     }
 }
 
-void Dot::render(LTexture *gDotTexture)
+void Dot::render(SDL_Renderer* renderer, LTexture *gDotTexture)
 {
     //Show the dot
-    gDotTexture->render( mPosX, mPosY );
+    gDotTexture->render(renderer, mPosX, mPosY );
 }
 
