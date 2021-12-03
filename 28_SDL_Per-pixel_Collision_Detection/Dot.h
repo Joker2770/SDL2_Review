@@ -9,9 +9,8 @@
 #define __DOT_H__
 
 #include "LTexture.h"
-#include <iostream>
+#include "config.h"
 #include <vector>
-using namespace std;
 
 //The dot that will move around on the screen
 class Dot

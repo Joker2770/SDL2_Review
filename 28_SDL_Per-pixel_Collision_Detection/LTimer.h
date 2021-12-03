@@ -8,31 +8,7 @@
 #ifndef _LTIMER_H_
 #define _LTIMER_H_
 
-#ifdef _MSC_VER
-//Windows
-extern "C"
-{
-#include "SDL.h"
-//#include "SDL_image.h"
-#include "SDL_ttf.h"
-};
-#else
-//Linux...
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <SDL2/SDL.h>
-//#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-
-#ifdef __cplusplus
-};
-#endif
-#endif
-
-#include<iostream>
-using namespace std;
+#include "config.h"
 
 //The application time based timer
 class LTimer

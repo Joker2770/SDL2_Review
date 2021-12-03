@@ -1,28 +1,7 @@
 #ifndef __LTEXTURE_H__
 #define __LTEXTURE_H__
 
-#ifdef _MSC_VER
-//Windows
-extern "C"
-{
-#include "SDL.h"
-#include "SDL_image.h"
-};
-#else
-//Linux...
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-
-#ifdef __cplusplus
-};
-#endif
-#endif
-
-#include <iostream>
+#include "config.h"
 
 //Texture wrapper class
 class LTexture

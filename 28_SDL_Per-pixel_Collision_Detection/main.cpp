@@ -5,38 +5,10 @@
     > Created Time: 2021年11月18日 星期四 13时21分15秒
  ************************************************************************/
 
-#include<iostream>
-using namespace std;
-
-#ifdef _MSC_VER
-//Windows
-extern "C"
-{
-#include "SDL.h"
-#include "SDL_image.h"
-};
-#else
-//Linux...
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-
-#ifdef __cplusplus
-};
-#endif
-#endif
-
 #include "LTexture.h"
 #include "Dot.h"
 #include "LTimer.h"
-
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-const int SCREEN_FPS = 60;
-const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
+#include "config.h"
 
 //Starts up SDL and creates window
 bool init();

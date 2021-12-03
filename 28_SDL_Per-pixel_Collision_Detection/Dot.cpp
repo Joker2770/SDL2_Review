@@ -7,9 +7,6 @@
 
 #include "Dot.h"
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
 //Box set collision detector
 bool checkCollision( std::vector<SDL_Rect>& a, std::vector<SDL_Rect>& b );
 
