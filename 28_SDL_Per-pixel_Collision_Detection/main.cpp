@@ -31,9 +31,12 @@ extern "C" {
 
 #include "LTexture.h"
 #include "Dot.h"
+#include "LTimer.h"
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
+const int SCREEN_FPS = 60;
+const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
 
 //Starts up SDL and creates window
 bool init();
@@ -170,6 +173,16 @@ int main(int argc, char *argv[])
 			//Event handler
 			SDL_Event e;
 
+            //The frames per second timer
+            LTimer fpsTimer;
+
+            //The frames per second cap timer
+            LTimer capTimer;
+
+            //Start counting frames per second
+            int countedFrames = 0;
+            fpsTimer.start();
+
             //The dot that will be moving around on the screen
             Dot dot( 0, 0 );
             
@@ -191,6 +204,13 @@ int main(int argc, char *argv[])
                     //Handle input for the dot
                     dot.handleEvent( e );
                 }
+				
+				//Calculate and correct fps
+                float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
+                if( avgFPS > 2000000 )
+                {
+                    avgFPS = 0;
+                }
 
                 //Move the dot and check collision
                 dot.move( otherDot.getColliders() );
@@ -205,6 +225,16 @@ int main(int argc, char *argv[])
 
                 //Update screen
                 SDL_RenderPresent( gRenderer );
+
+                ++countedFrames;
+				
+				//If frame finished early
+                int frameTicks = capTimer.getTicks();
+                if( frameTicks < SCREEN_TICKS_PER_FRAME )
+                {
+                    //Wait remaining time
+                    SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTicks );
+                }
 			}
 		}
 	}
