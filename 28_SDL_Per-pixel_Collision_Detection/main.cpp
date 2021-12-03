@@ -173,15 +173,11 @@ int main(int argc, char *argv[])
 			//Event handler
 			SDL_Event e;
 
-            //The frames per second timer
-            LTimer fpsTimer;
-
             //The frames per second cap timer
             LTimer capTimer;
 
             //Start counting frames per second
             int countedFrames = 0;
-            fpsTimer.start();
 
             //The dot that will be moving around on the screen
             Dot dot( 0, 0 );
@@ -203,13 +199,6 @@ int main(int argc, char *argv[])
 
                     //Handle input for the dot
                     dot.handleEvent( e );
-                }
-				
-				//Calculate and correct fps
-                float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
-                if( avgFPS > 2000000 )
-                {
-                    avgFPS = 0;
                 }
 
                 //Move the dot and check collision
