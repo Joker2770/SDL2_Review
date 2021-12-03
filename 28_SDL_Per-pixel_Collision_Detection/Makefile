@@ -12,7 +12,7 @@ COMPILER_FLAGS = -w
 LINKER_FLAGS = -lSDL2 -lSDL2_image
 
 #OBJ_NAME specifies the name of our exectuable
-OBJ_NAME = ../bin/27_SDL_Collision_Detection_exe
+OBJ_NAME = ../bin/28_SDL_Per-pixel_Collision_Detection_exe
 
 #This is the target that compiles our executable
 all : $(OBJS)
