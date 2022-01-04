@@ -148,9 +148,6 @@ int main(int argc, char *argv[])
             //The frames per second cap timer
             LTimer capTimer;
 
-            //Start counting frames per second
-            int countedFrames = 0;
-
             //The dot that will be moving around on the screen
             Dot dot;
 
@@ -160,6 +157,8 @@ int main(int argc, char *argv[])
 			//While application is running
 			while (!quit)
 			{
+				capTimer.start();
+				
 				//Handle events on queue
                 while( SDL_PollEvent( &e ) != 0 )
                 {
@@ -210,8 +209,6 @@ int main(int argc, char *argv[])
 
                 //Update screen
                 SDL_RenderPresent( gRenderer );
-
-                ++countedFrames;
 				
 				//If frame finished early
                 int frameTicks = capTimer.getTicks();
