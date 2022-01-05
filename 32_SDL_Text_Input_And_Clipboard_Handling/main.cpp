@@ -243,6 +243,14 @@ int main(int argc, char *argv[])
 
                 //Update screen
                 SDL_RenderPresent( gRenderer );
+				
+				//If frame finished early
+                int frameTicks = capTimer.getTicks();
+                if( frameTicks < SCREEN_TICKS_PER_FRAME )
+                {
+                    //Wait remaining time
+                    SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTicks );
+                }
 			}
 			//Disable text input
             SDL_StopTextInput();
