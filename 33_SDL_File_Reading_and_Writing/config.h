@@ -9,6 +9,7 @@
 #define __CONFIG_H__
 
 #include<iostream>
+#include<string>
 using namespace std;
 
 #ifdef _MSC_VER
